@@ -1,0 +1,12 @@
+<nav>
+    <div class="nav-wrapper blue">
+      <a href="#" class="brand-logo">Arte Nica</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        {% for item in site.data.nav %}
+        <li {% if page.url == item.link %}class="active"{% endif %}><a href="{{ item.link }}">
+          {{ item.name }}
+        </a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </nav>
