@@ -5,26 +5,23 @@ title: Arte Nicaragua
 <div class="container">
     <div class="row">
         {% for post in site.posts %}
-        <div class="col s12 m6 l4">
-            <div class="card">
-                <div class="card-image">
-                    <img src="{{post.image}}">
-                    <span class="card-title">{{post.titulo}}</span>
+        <div class="col s12 m4 l3">
+            <a href="{{ post.url }}">
+                <div class="card">
+                    <div class="card-image">
+                        <img class="responsive-img"src="{{post.image}}">
+                        {% if post.state == "Vendido" %}
+                        <span class="badge red-text">{{post.state}}</span>
+                        {% endif %}
+                    </div>
+                    <div class="card-content">
+                        <!--<p>{{ post.excerpt }}</p>-->
+                        <p>{{post.title | upcase}}</p>
+                        <b>{{post.author | upcase}}</b>
+                        <p class="green-text text-darken-4">{{post.price}}</p>
+                    </div>
                 </div>
-                <div class="card-content">
-                    <!--<p>{{ post.excerpt }}</p>-->
-                    <p>{{post.author}}</p>
-                    <p class="orange-text">{{post.price}}</p>
-                    {% if post.state == "Vendido" %}
-                        <p class="red-text">{{post.state}}</p>
-                    {% else %}
-                        <p class="green-text">{{post.state}}</p>
-                    {% endif %}
-                </div>
-                <div class="card-action">
-                    <a href="{{ post.url }}">Detalles</a>
-                </div>
-            </div>
+            </a>
         </div>
         {% endfor %}
     </div>
