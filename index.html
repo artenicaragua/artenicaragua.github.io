@@ -2,27 +2,27 @@
 layout: default
 title: Arte Nicaragua
 ---
-<div class="container">
-    <div class="row">
-        {% for post in site.posts %}
-        <div class="col s12 m4 l3">
+<script>
+    $(document).ready(function(){$('.tooltipped').tooltip();});
+</script>
+<div class="row">
+    {% for post in site.posts %}
+        <div class="col">
             <a href="{{ post.url }}">
-                <div class="card">
+                <div class="card tooltipped z-depth-2" data-position="top" data-tooltip="{{post.technique}}, {{post.dimensions}}">
                     <div class="card-image">
-                        <img class="responsive-img"src="{{post.image}}">
+                        <img src="{{post.image}}" style="height:300px;width:auto;">
                         {% if post.state == "Vendido" %}
-                        <span class="badge red-text">{{post.state}}</span>
+                            <span class="card-title red-text">{{post.state}}</span>
                         {% endif %}
                     </div>
-                    <div class="card-content">
-                        <!--<p>{{ post.excerpt }}</p>-->
-                        <p>{{post.title | upcase}}</p>
+                    <div class="card-content center-align">
+                        <em>{{post.title | upcase}}</em>
                         <b>{{post.author | upcase}}</b>
                         <p class="green-text text-darken-4">{{post.price}}</p>
                     </div>
                 </div>
             </a>
         </div>
-        {% endfor %}
-    </div>
+    {% endfor %}
 </div>

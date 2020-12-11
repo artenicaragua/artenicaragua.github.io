@@ -1,16 +1,15 @@
 ---
-layout: default
+layout: page
 ---
 <script type="text/javascript">
     $(document).ready(function(){
     $('.materialboxed').materialbox();
     });
 </script>
-<div class="flow-text">
-<h1>{{ page.title }}</h1>
+    <h1>{{ page.title }}</h1>
     <img class="materialboxed responsive-img" width="650" data-caption = "{{ page.title }}, {{ page.author }} {{page.year}}" src="{{page.image}}">
     <!--<img class="responsive-img" src="{{page.image}}">-->
-    <p>{{page.year}} - {{ page.author }}, todos los derechos reservados.</p>
+    <b>{{page.year}} - {{ page.author }}, todos los derechos reservados.</b>
     <p>Precio: <span>{{page.price}}</span></p>
     {% if page.state == "Vendido" %}
     <p>Estado: <span class="red-text">{{page.state}}</span></p>
@@ -20,5 +19,4 @@ layout: default
     <p>Técnica: {{page.technique}}</p>
     <p>Año: {{page.year}}</p>
     {{ content }}
-    <p>Publicado en Arte Nica desde: {{ page.date | date_to_string }}</p>
-</div>
+    <em>Publicado en Arte Nica desde: {{ page.date | date_to_string }}</em>
