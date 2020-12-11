@@ -6,16 +6,18 @@
         <div class="col">
             <a href="{{ post.url }}">
                 <div class="card tooltipped z-depth-2" data-position="top" data-tooltip="{{post.technique}}, {{post.dimensions}}">
-                    <div class="card-image">
-                        <img src="{{post.image}}" style="height:300px;width:auto;">
-                        {% if post.state == "Vendido" %}
-                            <span class="card-title red-text">{{post.state}}</span>
-                        {% endif %}
-                    </div>
-                    <div class="card-content center-align">
-                        <em>{{post.title | upcase}}</em>
-                        <b>{{post.author | upcase}}</b>
-                        <p class="green-text text-darken-4">{{post.price}}</p>
+                    <div class="waves-effect">
+                        <div class="card-image">
+                            <img src="{{post.image}}" style="height:300px;width:auto;">
+                            {% if post.state == "Vendido" %}
+                                <span class="card-title red-text">{{post.state}}</span>
+                            {% endif %}
+                        </div>
+                        <div class="card-content center-align">
+                            <em>{{post.title | upcase}}</em>
+                            <b>{{post.author | upcase}}</b>
+                            <p class="green-text text-darken-4">{{post.price}}</p>
+                        </div>
                     </div>
                 </div>
             </a>
