@@ -1,0 +1,24 @@
+<table>
+    <thead>
+        <tr>
+            <th>Dimensiones</th>
+            <th>Técnica</th>
+            <th>Estado</th>
+            <th>Precio</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{page.dimensions}}</td>
+            <td>{{page.technique}}</td>
+            <td>
+                {% if page.state == "Vendido" %}
+                <span class="red-text">{{page.state}}</span>
+                {% else %}
+                <span class="green-text">{{page.state}}</span>
+                {% endif %}
+            </td>
+            <td>{{page.price}}</td>
+        </tr>
+    </tbody>
+</table>
