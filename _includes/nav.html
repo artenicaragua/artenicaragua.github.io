@@ -1,27 +1,31 @@
-<script type="text/javascript">$('.dropdown-trigger').dropdown();</script>
-<!-- Dropdown Structure -->
-<ul id='dropdown1' class='dropdown-content'>
-  {% for item in site.data.nav %}
-  <li {% if page.url == item.link %}class="active"{% endif %}><a href="{{ item.link }}">
-    {{ item.name }}
-  </a></li>
-  {% endfor %}
-<div class="navbar-fixed">
+<script type="text/javascript">
+  $(document).ready(function(){
+  $('.dropdown-trigger').dropdown()();
+  });
+</script>
+<div class="navbar-fixed z-depth-2">
   <nav>
-    <div class="nav-wrapper blue z-depth-2">
+    <div class="nav-wrapper blue">
       <a href="#!" class="brand-logo">Arte Nica</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         {% for item in site.data.nav %}
-        <li {% if page.url == item.link %}class="active"{% endif %}><a href="{{ item.link }}">
-          {{ item.name }}
-        </a></li>
+          <li {% if page.url == item.link %}class="active"{% endif %}><a href="{{ item.link }}">
+            {{ item.name }}
+          </a></li>
         {% endfor %}
       </ul>
-      <div class="show-on-medium-and-down">
-        <!-- Dropdown Trigger -->
-        <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Drop Me!</a>
-        </ul>
-      </div>
+      <!-- Dropdown Trigger -->
+      <a class='waves-effect dropdown-trigger hide-on-large-only right' href='#' data-target='dropdown1'>
+        <i class="material-icons">dehaze</i>
+      </a>
+      <!-- Dropdown Structure -->
+      <ul id='dropdown1' class='dropdown-content'>
+        {% for item in site.data.nav %}
+          <li {% if page.url == item.link %}class="active"{% endif %}><a href="{{ item.link }}">
+            {{ item.name }}
+          </a></li>
+        {% endfor %}
+      </ul>
     </div>
   </nav>
 </div>
