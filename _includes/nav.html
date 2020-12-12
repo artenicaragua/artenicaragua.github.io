@@ -1,3 +1,11 @@
+<script type="text/javascript">$('.dropdown-trigger').dropdown();</script>
+<!-- Dropdown Structure -->
+<ul id='dropdown1' class='dropdown-content'>
+  {% for item in site.data.nav %}
+  <li {% if page.url == item.link %}class="active"{% endif %}><a href="{{ item.link }}">
+    {{ item.name }}
+  </a></li>
+  {% endfor %}
 <div class="navbar-fixed">
   <nav>
     <div class="nav-wrapper blue z-depth-2">
@@ -9,6 +17,11 @@
         </a></li>
         {% endfor %}
       </ul>
+      <div class="show-on-medium-and-down">
+        <!-- Dropdown Trigger -->
+        <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Drop Me!</a>
+        </ul>
+      </div>
     </div>
   </nav>
 </div>
