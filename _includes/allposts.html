@@ -7,7 +7,7 @@
             <a href="{{ post.url }}">
                 <div class="card tooltipped hoverable waves-effect" data-position="top" data-tooltip="{{post.technique}}, {{post.dimensions}}">
                     <div class="card-image">
-                        <img src="{{post.image}}" style="height:300px;width:auto;">
+                        <img src="{{post.image}}" style="max-height:300px;width:auto;" class="responsive-img">
                         {% if post.state == "Vendido" %}
                             <span class="card-title red-text">{{post.state}}</span>
                         {% endif %}
